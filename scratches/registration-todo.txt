@@ -1,0 +1,2 @@
+[]Add alert for account creation successful
+[]Add alert for passwords not matching

@@ -4,14 +4,53 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link href="course-manager.style.client.css" rel="stylesheet">
     <link rel="stylesheet" href="register.style.client.css">
 
     <title>Course Manager - Sign Up</title>
 </head>
 <body>
-
+<div class="container">
+    <h1>Sign Up</h1>
+    <div class="form-group row">
+        <label for="username" class="col-sm-3 col-form-label">
+            Username
+        </label>
+        <div class="col-sm-9">
+            <input class="form-control" id="username" placeholder="alice">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="password" class="col-sm-3 col-form-label">
+            Password
+        </label>
+        <div class="col-sm-9">
+            <input class="form-control" type="password" id="password" placeholder="aBc123&*(">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="verification" class="col-sm-3 col-form-label">
+            Verify Password
+        </label>
+        <div class="col-sm-9">
+            <input class="form-control" type="password" id="verification" placeholder="aBc123&*(">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <button class="btn btn-block btn-northeastern">Sign up</button>
+            <div class="row">
+                <div class="col-12">
+                    <a href="login.template.client.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
