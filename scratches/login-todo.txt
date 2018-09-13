@@ -1,0 +1,4 @@
+[]Update "Sign up" link to point to registration page
+[]Update "Sign in" link to point to the profile page
+
+[]Bonus: Figure out what to do with the "Forgot Password" link

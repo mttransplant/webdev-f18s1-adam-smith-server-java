@@ -1,0 +1,1 @@
+[]Resolve question of whether "course view" page should be index, or shoudl index redirect.
