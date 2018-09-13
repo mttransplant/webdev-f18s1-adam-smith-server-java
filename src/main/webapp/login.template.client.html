@@ -5,12 +5,46 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.style.client.css">
 
     <title>Course Manager - Sign In</title>
 </head>
 <body>
-<div class="container-fluid">
 
+<div class="container">
+    <h1>Sign In</h1>
+    <form>
+        <div class="form-group row">
+            <label for="username" class="col-sm-3 col-form-label">
+                Username
+            </label>
+            <div class="col-md-9">
+                <input class="form-control" id="username" placeholder="alice">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-sm-3 col-form-label">
+                Password
+            </label>
+            <div class="col-md-9">
+                <input class="form-control" type="password" id="password" placeholder="abc123&*(">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3 hidden-sm-down"></div>
+            <div class="col-md-9 col-sm-12">
+                <button class="btn btn-block btn-northeastern">Sign in</button>
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="float-right">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
