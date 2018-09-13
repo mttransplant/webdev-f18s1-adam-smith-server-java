@@ -1,0 +1,32 @@
+Profile Fields
+*id
+*username
+*password
+*firstName
+*lastName
+*dateOfBirth
+*role
+*email
+*phone
+
+Faculty Fields
+*office location
+*office hours
+*tenure status
+
+Student Fields
+*GPA
+*Graduation Year
+
+Course Fields
+*author => faculty id
+
+Section Fields
+*taught_by => faculty id
+*section_of => course id
+*term
+
+Enrollment Fields
+*student => student id
+*section => section id
+*grade
