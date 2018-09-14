@@ -1,0 +1,5 @@
+[]Rename course
+[]Add modules
+[]Add lessons
+[]Add topics
+[]Add content widgets
