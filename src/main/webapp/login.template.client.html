@@ -16,13 +16,13 @@
 
 <div class="container">
     <h1>Sign In</h1>
-    <form>
+    <form action="profile/profile.template.client.html">
         <div class="form-group row">
             <label for="username" class="col-sm-3 col-form-label">
                 Username
             </label>
             <div class="col-sm-9">
-                <input class="form-control" id="username" placeholder="alice">
+                <input class="form-control" type="text" id="username" placeholder="alice">
             </div>
         </div>
         <div class="form-group row">
@@ -36,7 +36,7 @@
         <div class="form-group row">
             <div class="col-sm-3"></div>
             <div class="col-sm-9">
-                <button id="sign-inBtn" class="btn btn-block btn-northeastern">Sign in</button>
+                <button id="sign-inBtn" class="btn btn-block btn-northeastern" type="submit">Sign in</button>
                 <div class="row">
                     <div class="col-6">
                         <a href="#">Forgot Password?</a>

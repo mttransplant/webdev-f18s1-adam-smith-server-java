@@ -15,44 +15,46 @@
 <body>
 <div class="container">
     <h1>Sign Up</h1>
-    <div class="form-group row">
-        <label for="username" class="col-sm-3 col-form-label">
-            Username
-        </label>
-        <div class="col-sm-9">
-            <input class="form-control" id="username" placeholder="alice">
+    <form action="profile/profile.template.client.html">
+        <div class="form-group row">
+            <label for="username" class="col-sm-3 col-form-label">
+                Username
+            </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" id="username" placeholder="alice">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="password" class="col-sm-3 col-form-label">
-            Password
-        </label>
-        <div class="col-sm-9">
-            <input class="form-control" type="password" id="password" placeholder="aBc123&*(">
+        <div class="form-group row">
+            <label for="password" class="col-sm-3 col-form-label">
+                Password
+            </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="password" id="password" placeholder="aBc123&*(">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="verification" class="col-sm-3 col-form-label">
-            Verify Password
-        </label>
-        <div class="col-sm-9">
-            <input class="form-control" type="password" id="verification" placeholder="aBc123&*(">
+        <div class="form-group row">
+            <label for="verification" class="col-sm-3 col-form-label">
+                Verify Password
+            </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="password" id="verification" placeholder="aBc123&*(">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-9">
-            <button id="sign-upBtn" class="btn btn-block btn-northeastern">Sign up</button>
-            <div class="row">
-                <div class="col-6">
-                    <a href="login.template.client.html">Login</a>
-                </div>
-                <div class="col-6">
-                    <a href="index.html" class="float-right">cancel</a>
+        <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <button id="sign-upBtn" class="btn btn-block btn-northeastern" type="submit">Sign up</button>
+                <div class="row">
+                    <div class="col-6">
+                        <a href="login.template.client.html">Login</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="index.html" class="float-right">cancel</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 
