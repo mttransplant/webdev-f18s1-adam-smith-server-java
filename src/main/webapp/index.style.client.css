@@ -1,0 +1,19 @@
+.btn-btm-rt{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.fa-plus-circle {
+    color: red;
+}
+
+.field-new-course {
+    background-color: lightcyan;
+    border-color: lightcyan;
+}
+
+input::placeholder {
+    color: white;
+    font-style: italic;
+}
