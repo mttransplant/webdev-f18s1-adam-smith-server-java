@@ -12,19 +12,19 @@
 <body>
 
 <!--Navigation adapted from https://getbootstrap.com/docs/4.1/components/navbar/ -->
-<nav class="navbar navbar-expand-md text-white navbar-dark bg-primary">
-    <span class="col-1 fas fa-bars m-1 fa-lg"></span>
-    <span class="col-md-2 collapse navbar-collapse m-1" id="navTitle">
+<nav class="navbar fixed-top navbar-expand-md text-white navbar-dark bg-primary">
+    <span class="col-1 fas fa-bars fa-lg"></span>
+    <span class="col-md-2 collapse navbar-collapse" id="navTitle">
         <h4>Course Manager</h4>
     </span>
     <form class="col-9">
         <div class="row">
             <div class="col-8">
-                <input class="field-new-course m-1 form-control"
+                <input class="field-new-course form-control"
                        type="text" placeholder="New Course Title">
             </div>
             <div class="col">
-                <span class="m-1 fa-stack fa-lg">
+                <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-plus-circle fa-stack-2x"></i>
                 </span>
@@ -35,12 +35,37 @@
 
 
 
+<div id="listHeader" class="nav-pad container">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <i class="col-sm-10 col-md-6">Title</i>
+                <i class="col-sm-0 col-md-2">Owned by</i>
+                <i class="col-sm-0 col-md-2">Last modified</i>
+                <span class="col-sm-2 col-md-2">
+                    <i class="fas fa-grip-horizontal"></i>
+                    <i class="mx-2 fas fa-sort-alpha-down"></i>
+                </span>
+            </div>
+        </li>
+    </ul>
 
+</div>
 
 
 
 <div id="theList" class="container">
-
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <i class="col-sm-1 col-md-1 fas fa-file-alt"></i>
+                <i class="col-sm-10 col-md-5">CS5610 - Web Development</i>
+                <i class="col-sm-0 col-md-2">me</i>
+                <i class="col-sm-0 col-md-3">6:45 PM</i>
+                <i class="col-sm-1 col-md-1 fas fa-times"></i>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <div id="addButton" class="btn-btm-rt">

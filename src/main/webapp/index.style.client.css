@@ -1,5 +1,5 @@
 .btn-btm-rt{
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     right: 30px;
 }
@@ -16,4 +16,8 @@
 input::placeholder {
     color: white;
     font-style: italic;
+}
+
+.nav-pad {
+    padding-top: 75px;
 }
