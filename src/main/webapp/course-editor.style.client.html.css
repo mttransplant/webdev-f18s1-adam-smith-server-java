@@ -1,0 +1,11 @@
+.fa-plus {
+    color: white;
+}
+
+.navbar-text {
+    color: white !important;
+}
+
+.active {
+    background-color: grey !important;
+}
