@@ -21,3 +21,7 @@ input::placeholder {
 .nav-pad {
     padding-top: 75px;
 }
+
+body {
+    background: lightgray !important;
+}
