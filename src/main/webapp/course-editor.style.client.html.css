@@ -17,3 +17,8 @@
 #modules.nav-item {
     color: white !important;
 }
+
+a.nav-link {
+    color: white !important;
+
+}
