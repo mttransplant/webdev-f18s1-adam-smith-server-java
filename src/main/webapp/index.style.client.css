@@ -25,3 +25,7 @@ input::placeholder {
 body {
     background: lightgray !important;
 }
+
+.fa-bars {
+    color: white !important;
+}
