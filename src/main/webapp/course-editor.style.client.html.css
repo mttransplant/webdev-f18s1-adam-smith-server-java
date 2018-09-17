@@ -6,6 +6,14 @@
     color: white !important;
 }
 
-.active {
+#pageNav.active {
     background-color: grey !important;
+}
+
+.nav-pad {
+    padding-top: 55px;
+}
+
+#modules.nav-item {
+    color: white !important;
 }
