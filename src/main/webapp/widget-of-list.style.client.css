@@ -1,0 +1,15 @@
+.yellow-square {
+    color: yellow;
+}
+
+.red-square {
+    color: red;
+}
+
+.fa-arrow-up, .fa-arrow-down {
+    color: black !important;
+}
+
+.fa-times {
+    color: white !important;
+}

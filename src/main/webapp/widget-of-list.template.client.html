@@ -3,8 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <title>List Widget</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" type="text/css" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link href="module-editor.style.client.css" rel="stylesheet">
+    <link rel="stylesheet" href="widget-heading.style.client.css">
 </head>
 <body>
 
+<div class="container">
+    <div class="form-group form-inline row float-right">
+        <a href="#">
+            <span class="fa-stack fa-lg">
+                <i class="fas fa-square yellow-square fa-stack-2x"></i>
+                <i class="fas fa-arrow-up fa-stack-1x"></i>
+            </span>
+        </a>
+        <a href="#">
+            <span class="fa-stack fa-lg">
+                <i class="fas fa-square yellow-square fa-stack-2x"></i>
+                <i class="fas fa-arrow-down fa-stack-1x"></i>
+            </span>
+        </a>
+        <select class="form-control custom-select">
+            <option selected>List</option>
+            <option value="HEADING">Heading</option>
+            <option value="LIST">List</option>
+            <option value="PARAGRAPH">Paragraph</option>
+            <option value="IMAGE">Image</option>
+        </select>
+        <a href="#">
+            <span class="fa-stack fa-lg">
+                <i class="fas fa-square red-square fa-stack-2x"></i>
+                <i class="fas fa-times fa-stack-1x"></i>
+            </span>
+        </a>
+    </div>
+
+    <h2>List Widget</h2>
+    <div class="form">
+        <div class="form-group row">
+            <label for="listItems" class="col-form-label">
+                List Items
+            </label>
+            <textarea class="form-control" rows="4" id="listItems" placeholder="Put each&#10;item in&#10;a separate row"></textarea>
+        </div>
+        <div class="form-group row">
+            <label for="listType" class="col-form-label">
+                Choose the list type
+            </label>
+            <select class="form-control custom-select" id="listType">
+                <option selected>Unordered list</option>
+                <option value="UNORDERED">Unordered List</option>
+                <option value="ORDERED">Ordered List</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="widgetName" class="col-form-label">Widget name</label>
+            <input class="form-control" type="text" id="widgetName" placeholder="Name the widget (optional)"
+        </div>
+    </div>
+    <h2>Preview</h2>
+    <ul>
+        <li>Put each</li>
+        <li>item in</li>
+        <li>a separate row</li>
+    </ul>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 </html>
