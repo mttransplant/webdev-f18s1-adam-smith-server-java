@@ -1,1 +1,3 @@
-[]Resolve question of whether "course view" page should be index, or shoudl index redirect.
+[X]Resolve question of whether "course view" page should be index, or should index redirect.
+[]Add in link for add course button
+[]Add in link for course delete buttons
