@@ -55,3 +55,17 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.btn-btm-rt{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.fa-plus-circle {
+    color: red;
+}
+
+.pagePad {
+    padding-top: 55px;
+}
