@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Link Widget</title>
+    <title>Image Widget</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" type="text/css" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
-    <link href="module-editor.style.client.css" rel="stylesheet">
-    <link rel="stylesheet" href="widget-link.style.client.css">
+    <link href="../module-editor/module-editor.style.client.css" rel="stylesheet">
+    <link rel="stylesheet" href="widget-image.style.client.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -36,7 +36,7 @@
             </span>
         </a>
         <select class="form-control custom-select">
-            <option selected>Paragraph</option>
+            <option selected>Image</option>
             <option value="HEADING">Heading</option>
             <option value="LIST">List</option>
             <option value="PARAGRAPH">Paragraph</option>
@@ -49,32 +49,23 @@
             </span>
         </a>
     </div>
-    <h2>Link Widget</h2>
+    <h2>Image Widget</h2>
     <div class="form">
         <div class="form-group row">
-            <label for="linkText" class="col-form-label">
-                Link Text
+            <label for="imageURL" class="col-form-label">
+                Image URL
             </label>
-            <input class="form-control" id="linkText" type="text" placeholder="Text displayed for link">
+            <input type="text" id="imageURL" class="form-control" placeholder="http://lorempixel.com/300/150/">
         </div>
         <div class="form-group row">
-            <label for="linkURL" class="col-form-label">
-                Link URL
-            </label>
-            <input class="form-control" id="linkURL" type="text" placeholder="https://youtu.be/2gXh83hNnWw">
-        </div>
-        <div class="form-group row">
-            <label for="widgetName" class="col-form-label">
-                Widget name
-            </label>
-            <input class="form-control" type="text" id="widgetName" placeholder="Name the widget (optional)">
+            <label for="widgetName" class="col-form-label">Widget name</label>
+            <input class="form-control" type="text" id="widgetName" placeholder="Name the widget (optional)"
         </div>
     </div>
     <h2>Preview</h2>
-    <a href="https://youtu.be/2gXh83hNnWw">Text displayed for link</a>
+    <img src="http://lorempixel.com/300/150">
 
 </div>
-
 
 </body>
 </html>

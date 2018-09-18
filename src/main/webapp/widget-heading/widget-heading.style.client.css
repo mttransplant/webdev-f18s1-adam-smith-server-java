@@ -1,9 +1,9 @@
 .yellow-square {
-    color: yellow;
+    color: yellow !important;
 }
 
 .red-square {
-    color: red;
+    color: red !important;
 }
 
 .fa-arrow-up, .fa-arrow-down {

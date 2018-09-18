@@ -1,0 +1,19 @@
+a.nav-item {
+    background-color: grey;
+    color: white !important;
+}
+.yellow-square {
+    color: yellow !important;
+}
+
+.red-square {
+    color: red !important;
+}
+
+.fa-arrow-up, .fa-arrow-down {
+    color: black !important;
+}
+
+.fa-times {
+    color: white !important;
+}
