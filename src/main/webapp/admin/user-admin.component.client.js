@@ -44,7 +44,7 @@
         $roleFld.val("FACULTY");
     }
     function findAllUsers() {
-        renderUsers(userService.findAllUsers())
+        renderUsers(userService.findAllUsers());
     }
     function findUserById() {
 
@@ -52,7 +52,8 @@
     function deleteUser(event) {
         var button = $(event.currentTarget);
         var tr = button.parents(".wbdv-template");
-        tr.remove();
+        var id = tr.get(0).id;
+        userService.deleteUser(id,tr.remove());
     }
     function selectUser() {
 
@@ -90,29 +91,6 @@
     function renderUsers(users) {
         for (var i in users) {
             showUser(users[i]);
-            // var newUserRow = $userRowTemplate.clone();
-            // newUserRow
-            //     .attr("id", users[i].id)
-            //     .removeClass("wbdv-hidden")
-            //     .find(".wbdv-username")
-            //     .html(users[i].username);
-            // newUserRow
-            //     .find(".wbdv-password")
-            //     .html(users[i].password);
-            // newUserRow
-            //     .find(".wbdv-first-name")
-            //     .html(users[i].firstName);
-            // newUserRow
-            //     .find(".wbdv-last-name")
-            //     .html(users[i].lastName);
-            // newUserRow
-            //     .find(".wbdv-role")
-            //     .html(users[i].role);
-            // newUserRow
-            //     .find(".wbdv-remove")
-            //     .click(deleteUser);
-            //
-            // $tbody.append(newUserRow);
         }
     }
 })();

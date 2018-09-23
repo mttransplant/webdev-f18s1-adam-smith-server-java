@@ -1,5 +1,3 @@
-// import User from "../models/user.model.client.js";
-
 let defaultUsers = [
     {
         "id": "1537734567871",
@@ -57,6 +55,12 @@ function AdminUserServiceClient() {
 
     }
     function deleteUser(userId, callback) {
-
+        console.log(userId);
+        for (var i in users) {
+            if (users[i].id === userId) {
+                users.splice(i,1);
+            }
+        }
+        callback;
     }
 }
