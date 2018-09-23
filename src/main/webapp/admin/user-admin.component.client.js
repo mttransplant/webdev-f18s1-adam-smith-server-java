@@ -1,6 +1,6 @@
 (function () {
     var $usernameFld, $passwordFld; // note: the $ is a clue that this variable is bound to an element in the DOM.
-    var $removeBtn, $selectBtn;
+    // var $removeBtn, $selectBtn;
     var $createBtn, $updateBtn, $searchBtn;
     var $firstNameFld, $lastNameFld, $roleFld;
     var $userRowTemplate, $tbody;
@@ -31,6 +31,8 @@
         var role = $roleFld.val();
         clearform();
 
+        var timestamp = (new Date()).getTime();
+
         var newUser = $userRowTemplate.clone();
         newUser
             .removeClass("wbdv-hidden")
@@ -48,6 +50,10 @@
         newUser
             .find(".wbdv-role")
             .html(role);
+        newUser
+            .find(".wbdv-remove")
+            .attr("id", timestamp)
+            .click(deleteUser);
 
         $tbody.append(newUser);
     }
@@ -64,8 +70,10 @@
     function findUserById() {
 
     }
-    function deleteUser() {
-
+    function deleteUser(event) {
+        var button = $(event.currentTarget);
+        var tr = button.parents(".wbdv-template");
+        tr.remove();
     }
     function selectUser() {
 

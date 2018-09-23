@@ -13,6 +13,7 @@ function AdminUserServiceClient() {
     function findAllUsers() {
         return [
             {
+                "id": "1537734567871",
                 "username": "alice",
                 "password": "alice",
                 "email": "alice@wonderland.com",
@@ -21,6 +22,7 @@ function AdminUserServiceClient() {
                 "role": "FACULTY"
             },
             {
+                "id": "1537734573696",
                 "username": "bob",
                 "password": "bob",
                 "email": "bob@builder.com",
@@ -29,6 +31,7 @@ function AdminUserServiceClient() {
                 "role": "STUDENT"
             },
             {
+                "id": "1537734637529",
                 "username": "charly",
                 "password": "charly",
                 "email": "charly@peanuts.com",
