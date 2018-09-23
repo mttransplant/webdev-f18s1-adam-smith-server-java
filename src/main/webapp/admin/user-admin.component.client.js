@@ -30,33 +30,11 @@
         var firstName = $firstNameFld.val();
         var lastName = $lastNameFld.val();
         var role = $roleFld.val();
+        var id = (new Date()).getTime();
         clearform();
 
-        var timestamp = (new Date()).getTime();
-
-        var newUser = $userRowTemplate.clone();
-        newUser
-            .removeClass("wbdv-hidden")
-            .find(".wbdv-username")
-            .html(username);
-        newUser
-            .find(".wbdv-password")
-            .html(password);
-        newUser
-            .find(".wbdv-first-name")
-            .html(firstName);
-        newUser
-            .find(".wbdv-last-name")
-            .html(lastName);
-        newUser
-            .find(".wbdv-role")
-            .html(role);
-        newUser
-            .find(".wbdv-remove")
-            .attr("id", timestamp)
-            .click(deleteUser);
-
-        $tbody.append(newUser);
+        var newUser = new User(id,username,password,firstName,lastName,role);
+        userService.createUser(newUser,showUser(newUser));
     }
     function clearform() {
         $usernameFld.val("");
@@ -85,31 +63,56 @@
     function renderUser(user) {
 
     }
+    function showUser(user) {
+        var newUserRow = $userRowTemplate.clone();
+        newUserRow
+            .attr("id", user.id)
+            .removeClass("wbdv-hidden")
+            .find(".wbdv-username")
+            .html(user.username);
+        newUserRow
+            .find(".wbdv-password")
+            .html(user.password);
+        newUserRow
+            .find(".wbdv-first-name")
+            .html(user.firstName);
+        newUserRow
+            .find(".wbdv-last-name")
+            .html(user.lastName);
+        newUserRow
+            .find(".wbdv-role")
+            .html(user.role);
+        newUserRow
+            .find(".wbdv-remove")
+            .click(deleteUser);
+        $tbody.append(newUserRow);
+    }
     function renderUsers(users) {
         for (var i in users) {
-            var newUserRow = $userRowTemplate.clone();
-            newUserRow
-                .attr("id", users[i].id)
-                .removeClass("wbdv-hidden")
-                .find(".wbdv-username")
-                .html(users[i].username);
-            newUserRow
-                .find(".wbdv-password")
-                .html(users[i].password);
-            newUserRow
-                .find(".wbdv-first-name")
-                .html(users[i].firstName);
-            newUserRow
-                .find(".wbdv-last-name")
-                .html(users[i].lastName);
-            newUserRow
-                .find(".wbdv-role")
-                .html(users[i].role);
-            newUserRow
-                .find(".wbdv-remove")
-                .click(deleteUser);
-
-            $tbody.append(newUserRow);
+            showUser(users[i]);
+            // var newUserRow = $userRowTemplate.clone();
+            // newUserRow
+            //     .attr("id", users[i].id)
+            //     .removeClass("wbdv-hidden")
+            //     .find(".wbdv-username")
+            //     .html(users[i].username);
+            // newUserRow
+            //     .find(".wbdv-password")
+            //     .html(users[i].password);
+            // newUserRow
+            //     .find(".wbdv-first-name")
+            //     .html(users[i].firstName);
+            // newUserRow
+            //     .find(".wbdv-last-name")
+            //     .html(users[i].lastName);
+            // newUserRow
+            //     .find(".wbdv-role")
+            //     .html(users[i].role);
+            // newUserRow
+            //     .find(".wbdv-remove")
+            //     .click(deleteUser);
+            //
+            // $tbody.append(newUserRow);
         }
     }
 })();

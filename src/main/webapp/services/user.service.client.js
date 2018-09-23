@@ -1,4 +1,4 @@
-// import "../models/user.model.client.js";
+// import User from "../models/user.model.client.js";
 
 let defaultUsers = [
     {
@@ -38,18 +38,17 @@ function AdminUserServiceClient() {
     this.updateUser = updateUser;
     // this.url = 'http://localhost:8080/api/user';
     // let usersFile = import ("../models/users.json");
+    // var user = new User();
+    var users = [];
+    users = defaultUsers;
     var self = this;
-    // var users = [User];
-    // users = loadUsers(usersFile);
 
-    // function loadUsers(file) {
-    //     return JSON.parse(file);
-    // }
     function createUser(user, callback) {
-
+        users.push(user);
+        callback;
     }
     function findAllUsers() {
-        return defaultUsers;
+        return users;
     }
     function findUserById(userId, callback) {
 
