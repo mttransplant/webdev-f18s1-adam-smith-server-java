@@ -22,6 +22,7 @@
         $updateBtn = $("#updateBtn");
 
         $createBtn.click(createUser);
+        findAllUsers();
     }
     function createUser() {
         var username = $usernameFld.val();
@@ -65,7 +66,7 @@
         $roleFld.val("FACULTY");
     }
     function findAllUsers() {
-
+        renderUsers(userService.findAllUsers())
     }
     function findUserById() {
 
@@ -85,6 +86,30 @@
 
     }
     function renderUsers(users) {
+        for (var i in users) {
+            var newUserRow = $userRowTemplate.clone();
+            newUserRow
+                .attr("id", users[i].id)
+                .removeClass("wbdv-hidden")
+                .find(".wbdv-username")
+                .html(users[i].username);
+            newUserRow
+                .find(".wbdv-password")
+                .html(users[i].password);
+            newUserRow
+                .find(".wbdv-first-name")
+                .html(users[i].firstName);
+            newUserRow
+                .find(".wbdv-last-name")
+                .html(users[i].lastName);
+            newUserRow
+                .find(".wbdv-role")
+                .html(users[i].role);
+            newUserRow
+                .find(".wbdv-remove")
+                .click(deleteUser);
 
+            $tbody.append(newUserRow);
+        }
     }
 })();

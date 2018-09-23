@@ -1,11 +1,12 @@
-function User(username, password, firstName, lastName) {
+function User(id, username, password, firstName, lastName, role) {
+    this.id = id;
     this.username = username;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.role = role;
     this.email = "";
     this.phone = "";
-    this.role = "";
     this.dateOfBirth = "";
     // ...same for rest of properties…
     var self = this;
