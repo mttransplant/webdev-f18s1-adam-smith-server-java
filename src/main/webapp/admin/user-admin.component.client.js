@@ -34,11 +34,12 @@
         var firstName = $firstNameFld.val();
         var lastName = $lastNameFld.val();
         var role = $roleFld.val();
-        var id = (new Date()).getTime();
+        var id = (new Date()).getTime().toString();
         clearform();
 
         var newUser = new User(id,username,password,firstName,lastName,role);
         userService.createUser(newUser,showUser(newUser));
+
     }
     function clearform() {
         $usernameFld.val("");
@@ -56,7 +57,10 @@
         var button = $(event.currentTarget);
         var tr = button.parents(".wbdv-template");
         var id = tr.get(0).id;
+
+
         var foundUser = userService.findUserById(id);
+
         renderUser(foundUser);
 
         // return userService.findUserById(id)
