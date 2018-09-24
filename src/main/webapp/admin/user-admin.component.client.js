@@ -94,10 +94,13 @@
 
         var userUpdates = new User(renderedUserId,username,password,firstName,lastName,role);
         userService.updateUser(renderedUserId,userUpdates,updateUserInList(userUpdates));
+        $usernameFld.prop("readonly", false);
         clearform();
     }
     function renderUser(user) {
-        $usernameFld.val(user.username);
+        $usernameFld
+            .val(user.username)
+            .prop("readonly", true);
         $passwordFld.val(user.password);
         $firstNameFld.val(user.firstName);
         $lastNameFld.val(user.lastName);
