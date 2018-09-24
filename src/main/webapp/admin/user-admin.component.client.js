@@ -103,7 +103,8 @@
             .html(user.username);
         newUserRow
             .find(".wbdv-password")
-            .html(user.password);
+            .html(Array(user.password.length + 1).join("*"));
+            // .html(user.password);
         newUserRow
             .find(".wbdv-first-name")
             .html(user.firstName);
@@ -122,6 +123,7 @@
         $tbody.append(newUserRow);
     }
     function renderUsers(users) {
+        $(".wbdv-deletable").remove();
         for (var i in users) {
             showUser(users[i]);
         }
