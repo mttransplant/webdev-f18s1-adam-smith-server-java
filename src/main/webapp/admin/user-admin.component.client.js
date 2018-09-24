@@ -45,6 +45,7 @@
     }
     function findAllUsers() {
         renderUsers(userService.findAllUsers());
+        // userService.findAllUsers(renderUsers(users));
     }
     function findUserById() {
 
@@ -56,13 +57,22 @@
         userService.deleteUser(id,tr.remove());
     }
     function selectUser() {
-
+        var button = $(event.currentTarget);
+        var tr = button.parents(".wbdv-template");
+        var id = tr.get(0).id;
+        console.log(id);
+        var foundUser = userService.findUserById(id);
+        renderUser(foundUser);
     }
     function updateUser() {
 
     }
     function renderUser(user) {
-
+        $usernameFld.val(user.username);
+        $passwordFld.val(user.password);
+        $firstNameFld.val(user.firstName);
+        $lastNameFld.val(user.lastName);
+        $roleFld.val(user.role);
     }
     function showUser(user) {
         var newUserRow = $userRowTemplate.clone();
@@ -83,6 +93,9 @@
         newUserRow
             .find(".wbdv-role")
             .html(user.role);
+        newUserRow
+            .find(".wbdv-select")
+            .click(selectUser);
         newUserRow
             .find(".wbdv-remove")
             .click(deleteUser);

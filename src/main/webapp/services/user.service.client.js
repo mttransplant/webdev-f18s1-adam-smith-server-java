@@ -45,17 +45,22 @@ function AdminUserServiceClient() {
         users.push(user);
         callback;
     }
-    function findAllUsers() {
+    function findAllUsers(callback) {
         return users;
+        callback;
     }
     function findUserById(userId, callback) {
-
+        for (var i in users) {
+            if (users[i].id === userId) {
+                return users[i];
+            }
+        }
+        callback;
     }
     function updateUser(userId, user, callback) {
 
     }
     function deleteUser(userId, callback) {
-        console.log(userId);
         for (var i in users) {
             if (users[i].id === userId) {
                 users.splice(i,1);
