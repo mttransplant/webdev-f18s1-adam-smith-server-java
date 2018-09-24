@@ -1,33 +1,3 @@
-let defaultUsers = [
-    {
-        "id": "1537734567871",
-        "username": "alice",
-        "password": "alice",
-        "email": "alice@wonderland.com",
-        "firstName": "Alice",
-        "lastName": "Wonderland",
-        "role": "FACULTY"
-    },
-    {
-        "id": "1537734573696",
-        "username": "bob",
-        "password": "bob",
-        "email": "bob@builder.com",
-        "firstName": "Bob",
-        "lastName": "Builder",
-        "role": "STUDENT"
-    },
-    {
-        "id": "1537734637529",
-        "username": "charly",
-        "password": "charly",
-        "email": "charly@peanuts.com",
-        "firstName": "Charly",
-        "lastName": "Brown",
-        "role": "STUDENT"
-    }
-]
-
 function AdminUserServiceClient() {
     this.createUser = createUser;
     this.findAllUsers = findAllUsers;
@@ -36,10 +6,13 @@ function AdminUserServiceClient() {
     this.updateUser = updateUser;
     this.findUsersBySearch = findUsersBySearch;
     // this.url = 'http://localhost:8080/api/user';
-    // let usersFile = import ("../models/users.json");
-    // var user = new User();
     var users = [];
-    users = defaultUsers;
+    // users = defaultUsers;
+    $.getJSON("../services/users.json",function (json) {
+        console.log(json);
+        users = json.map(userJSON => new User(userJSON.id,userJSON.username,userJSON.password,userJSON.firstName,userJSON.lastName,userJSON.role));
+        console.log(users);
+    });
     var self = this;
 
     function createUser(user, callback) {
