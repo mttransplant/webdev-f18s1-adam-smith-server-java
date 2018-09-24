@@ -34,6 +34,7 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
+    this.findUsersBySearch = findUsersBySearch;
     // this.url = 'http://localhost:8080/api/user';
     // let usersFile = import ("../models/users.json");
     // var user = new User();
@@ -56,6 +57,16 @@ function AdminUserServiceClient() {
             }
         }
         callback;
+    }
+    function findUsersBySearch(params) {
+        var result = users.filter(function(item) {
+           for (var key in params) {
+               if (item[key] === undefined || item[key] != params[key])
+                   return false;
+           }
+           return true;
+        });
+        return result;
     }
     function updateUser(userId, user, callback) {
         var userForUpdates = findUserById(userId);

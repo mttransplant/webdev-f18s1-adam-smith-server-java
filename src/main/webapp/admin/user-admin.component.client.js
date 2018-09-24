@@ -22,8 +22,10 @@
         $createBtn = $("#createBtn");
         $updateBtn = $("#updateBtn");
 
+        $searchBtn.click(search);
         $createBtn.click(createUser);
         $updateBtn.click(updateUser);
+
         findAllUsers();
     }
     function createUser() {
@@ -132,8 +134,34 @@
     }
     function renderUsers(users) {
         $(".wbdv-deletable").remove();
+        clearform();
         for (var i in users) {
             showUser(users[i]);
         }
+    }
+    function search() {
+        var username = $usernameFld.val();
+        var firstName = $firstNameFld.val();
+        var lastName = $lastNameFld.val();
+        var role = $roleFld.val();
+        var searchParams ={};
+        if (username != "") {
+            // searchParams.append("username:"+username);
+            searchParams["username"] = username;
+        }
+        if (firstName != "") {
+            // searchParams.append("firstName:"+firstName);
+            searchParams["firstName"] = firstName;
+        }
+        if (lastName != "") {
+            // searchParams.append("lastName:"+lastName);
+            searchParams["lastName"] = lastName;
+        }
+        if (role != "BLANK") {
+            // searchParams.append("role:"+role);
+            searchParams["role"] = role;
+        }
+        var returnedUsers = userService.findUsersBySearch(searchParams);
+        renderUsers(returnedUsers);
     }
 })();
