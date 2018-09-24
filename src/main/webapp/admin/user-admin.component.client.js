@@ -68,7 +68,7 @@
     }
     function updateUserInList(user) {
         $("#"+renderedUserId).find(".wbdv-username").html(user.username);
-        $("#"+renderedUserId).find(".wbdv-password").html(user.password);
+        $("#"+renderedUserId).find(".wbdv-password").html(maskPassword(user.password));
         $("#"+renderedUserId).find(".wbdv-first-name").html(user.firstName);
         $("#"+renderedUserId).find(".wbdv-last-name").html(user.lastName);
         $("#"+renderedUserId).find(".wbdv-role").html(user.role);
@@ -81,8 +81,7 @@
         var role = $roleFld.val();
 
         var userUpdates = new User(renderedUserId,username,password,firstName,lastName,role);
-        userService.updateUser(renderedUserId,userUpdates);
-        updateUserInList(userUpdates);
+        userService.updateUser(renderedUserId,userUpdates,updateUserInList(userUpdates));
         clearform();
     }
     function renderUser(user) {
@@ -92,6 +91,9 @@
         $lastNameFld.val(user.lastName);
         $roleFld.val(user.role);
         renderedUserId = user.id;
+    }
+    function maskPassword(password){
+        return Array(password.length + 1).join("*").toString();
     }
     function showUser(user) {
         var newUserRow = $userRowTemplate.clone();
@@ -103,7 +105,7 @@
             .html(user.username);
         newUserRow
             .find(".wbdv-password")
-            .html(Array(user.password.length + 1).join("*"));
+            .html(maskPassword(user.password));
             // .html(user.password);
         newUserRow
             .find(".wbdv-first-name")

@@ -64,6 +64,7 @@ function AdminUserServiceClient() {
         userForUpdates.firstName = user.firstName;
         userForUpdates.lastName = user.lastName;
         userForUpdates.role = user.role;
+        callback;
     }
     function deleteUser(userId, callback) {
         for (var i in users) {
