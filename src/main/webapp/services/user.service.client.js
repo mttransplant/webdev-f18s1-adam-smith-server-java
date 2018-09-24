@@ -58,7 +58,12 @@ function AdminUserServiceClient() {
         callback;
     }
     function updateUser(userId, user, callback) {
-
+        var userForUpdates = findUserById(userId);
+        userForUpdates.username = user.username;
+        userForUpdates.password = user.password;
+        userForUpdates.firstName = user.firstName;
+        userForUpdates.lastName = user.lastName;
+        userForUpdates.role = user.role;
     }
     function deleteUser(userId, callback) {
         for (var i in users) {

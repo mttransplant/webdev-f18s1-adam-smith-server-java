@@ -5,6 +5,7 @@
     var $firstNameFld, $lastNameFld, $roleFld;
     var $userRowTemplate, $tbody;
     var userService = new AdminUserServiceClient();
+    var renderedUserId = "";
     $(main);
 
     function main() {
@@ -22,6 +23,7 @@
         $updateBtn = $("#updateBtn");
 
         $createBtn.click(createUser);
+        $updateBtn.click(updateUser);
         findAllUsers();
     }
     function createUser() {
@@ -42,6 +44,7 @@
         $firstNameFld.val("");
         $lastNameFld.val("");
         $roleFld.val("FACULTY");
+        renderedUserId = "";
     }
     function findAllUsers() {
         renderUsers(userService.findAllUsers());
@@ -60,12 +63,27 @@
         var button = $(event.currentTarget);
         var tr = button.parents(".wbdv-template");
         var id = tr.get(0).id;
-        console.log(id);
         var foundUser = findUserById(id);
         renderUser(foundUser);
     }
+    function updateUserInList(user) {
+        $("#"+renderedUserId).find(".wbdv-username").html(user.username);
+        $("#"+renderedUserId).find(".wbdv-password").html(user.password);
+        $("#"+renderedUserId).find(".wbdv-first-name").html(user.firstName);
+        $("#"+renderedUserId).find(".wbdv-last-name").html(user.lastName);
+        $("#"+renderedUserId).find(".wbdv-role").html(user.role);
+    }
     function updateUser() {
+        var username = $usernameFld.val();
+        var password = $passwordFld.val();
+        var firstName = $firstNameFld.val();
+        var lastName = $lastNameFld.val();
+        var role = $roleFld.val();
 
+        var userUpdates = new User(renderedUserId,username,password,firstName,lastName,role);
+        userService.updateUser(renderedUserId,userUpdates);
+        updateUserInList(userUpdates);
+        clearform();
     }
     function renderUser(user) {
         $usernameFld.val(user.username);
@@ -73,12 +91,14 @@
         $firstNameFld.val(user.firstName);
         $lastNameFld.val(user.lastName);
         $roleFld.val(user.role);
+        renderedUserId = user.id;
     }
     function showUser(user) {
         var newUserRow = $userRowTemplate.clone();
         newUserRow
             .attr("id", user.id)
             .removeClass("wbdv-hidden")
+            .addClass("wbdv-deletable")
             .find(".wbdv-username")
             .html(user.username);
         newUserRow
