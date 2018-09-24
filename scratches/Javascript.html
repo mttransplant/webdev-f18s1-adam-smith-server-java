@@ -1,0 +1,82 @@
+<html>
+<head>
+
+    <script type="text/javascript">
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i=0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds){
+                    break;
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function sayHello() {
+            alert("Hello!")
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="hello">
+
+</div>
+
+<button onclick="sayHello()">
+    Say Hello
+</button>
+
+<script>
+    // alert("Hello World!");
+    // document.write("<h1>Hello World!</h1>");
+    document.getElementById("hello").innerHTML="Hello World!";
+
+
+    // for (i=0; i<10; i++) {
+    var theElement = document.getElementById("hello");
+    theElement.style.color = "red";
+    theElement.style.fontSize = "25px";
+    theElement.style.display = "none";
+    // sleep(1000);
+    theElement.style.display = "block";
+    // sleep(1000);
+    // }
+    document.write("done");
+
+    var scores = [90,89,78,67];
+    document.write("<h1>Scores</h1>")
+    document.write(scores+"<br/>");
+
+
+    var total = 0;
+    for (i=0; i<scores.length; i++) {
+        total += scores[i];
+    }
+    var average = total / scores.length;
+    document.write ("Sum of scores is: "+total+"<br/>");
+    document.write("Average of scores is: "+average+"<br/>");
+
+    document.write("<ul>");
+    for (var i in scores ) {
+        document.write("<li>scores["+i+"] = "+scores[i]);
+        document.write("</li>");
+    }
+    document.write("</ul>")
+
+</script>
+
+<h1>Simple Math</h1>
+<span id="a">2</span> + <span id="b">3</span> = <span id="result"></span>
+
+<script>
+    var a = parseInt(document.getElementById("a").innerHTML);
+    var b = parseInt(document.getElementById("b").innerHTML);
+    var result = document.getElementById("result");
+    result.innerHTML = a + b;
+</script>
+
+</body>
+</html>
