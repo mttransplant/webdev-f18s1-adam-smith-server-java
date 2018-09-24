@@ -50,8 +50,14 @@
         renderUsers(userService.findAllUsers());
         // userService.findAllUsers(renderUsers(users));
     }
-    function findUserById(id) {
-        return userService.findUserById(id)
+    function findUserById() {
+        var button = $(event.currentTarget);
+        var tr = button.parents(".wbdv-template");
+        var id = tr.get(0).id;
+        var foundUser = userService.findUserById(id);
+        renderUser(foundUser);
+
+        // return userService.findUserById(id)
     }
     function deleteUser(event) {
         var button = $(event.currentTarget);
@@ -59,13 +65,13 @@
         var id = tr.get(0).id;
         userService.deleteUser(id,tr.remove());
     }
-    function selectUser() {
-        var button = $(event.currentTarget);
-        var tr = button.parents(".wbdv-template");
-        var id = tr.get(0).id;
-        var foundUser = findUserById(id);
-        renderUser(foundUser);
-    }
+    // function selectUser() {
+    //     var button = $(event.currentTarget);
+    //     var tr = button.parents(".wbdv-template");
+    //     var id = tr.get(0).id;
+    //     var foundUser = findUserById(id);
+    //     renderUser(foundUser);
+    // }
     function updateUserInList(user) {
         $("#"+renderedUserId).find(".wbdv-username").html(user.username);
         $("#"+renderedUserId).find(".wbdv-password").html(maskPassword(user.password));
@@ -118,7 +124,7 @@
             .html(user.role);
         newUserRow
             .find(".wbdv-select")
-            .click(selectUser);
+            .click(findUserById);
         newUserRow
             .find(".wbdv-remove")
             .click(deleteUser);
