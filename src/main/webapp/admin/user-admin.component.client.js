@@ -47,8 +47,8 @@
         renderUsers(userService.findAllUsers());
         // userService.findAllUsers(renderUsers(users));
     }
-    function findUserById() {
-
+    function findUserById(id) {
+        return userService.findUserById(id)
     }
     function deleteUser(event) {
         var button = $(event.currentTarget);
@@ -61,7 +61,7 @@
         var tr = button.parents(".wbdv-template");
         var id = tr.get(0).id;
         console.log(id);
-        var foundUser = userService.findUserById(id);
+        var foundUser = findUserById(id);
         renderUser(foundUser);
     }
     function updateUser() {
