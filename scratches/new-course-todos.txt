@@ -1,1 +1,0 @@
-[]Defaults: New course title = "New Course"

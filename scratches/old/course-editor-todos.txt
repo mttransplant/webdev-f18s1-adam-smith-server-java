@@ -1,0 +1,8 @@
+[#]Rename course
+[#]Add modules
+[#]Add lessons
+[#]Add topics
+[#]Add content widgets
+[#]change to one row, two columns, even for menu head
+
+#Migrated to course-editor.template.client.html

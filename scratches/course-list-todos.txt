@@ -1,3 +1,0 @@
-[]New Course button links to new course page
-[X]Columns: Icon, Title, owner, date/time last modified,
-[]Add link to list items to go to course editor
