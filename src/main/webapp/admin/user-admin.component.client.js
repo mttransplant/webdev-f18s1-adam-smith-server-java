@@ -147,10 +147,6 @@
         }
     }
     function search() {
-        // FIXME: add flexible search
-        // Use values of fields as occurring in the search items, e.g.,
-        //username = "alice" returns all users with "alice" anywhere in their username
-        //Example user[i].username.indexOf(usernameSearchFld) > 0
         var username = $usernameFld.val();
         var firstName = $firstNameFld.val();
         var lastName = $lastNameFld.val();

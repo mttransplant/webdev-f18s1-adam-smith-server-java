@@ -32,9 +32,20 @@ function AdminUserServiceClient() {
         callback;
     }
     function findUsersBySearch(params) {
+        // FIXED: add flexible search
+        // Use values of fields as occurring in the search items, e.g.,
+        //username = "alice" returns all users with "alice" anywhere in their username
+        //Example user[i].username.indexOf(usernameSearchFld) > 0
+
         var result = users.filter(function(item) {
+            // console.log("Params: "+params);
+            // console.log("Item: "+item);
            for (var key in params) {
-               if (item[key] === undefined || item[key] != params[key])
+               console.log(key);
+               console.log(params[key]);
+               console.log(item[key]);
+               // if (item[key] === undefined || item[key] != params[key])
+               if (item[key] === undefined || item[key].indexOf(params[key]) != 0)
                    return false;
            }
            return true;
